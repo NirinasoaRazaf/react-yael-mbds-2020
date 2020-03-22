@@ -19,7 +19,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import Song from "./Song";
 
 import "./GroupeRock.css";
 
@@ -35,12 +35,15 @@ const useStyles = makeStyles({
 const Album = () => {
  
   let listeDesAlbum = metallica.albums.map((m, index) => (
+    
    
+    
+  
     <Grid item xs={4}>
     <Card   component={Paper} style={{backgroundColor:'black',fontSize:15}} >
            
      <CardContent>
-     <img src={m.cover ? m.cover.standard:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F2454022%2Fbasic_modern_music_ringtone_sound_ui_icon&psig=AOvVaw1N4R3uBlN0fAJzo2Ns__kU&ust=1584713027946000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNj9tp_apugCFQAAAAAdAAAAABAK'} />
+     <img src={m.cover?m.cover.medium:'https://icons.iconarchive.com/icons/celldrifter/muku-style/256/Disk-DVD-R-icon.png'}/>
        <Typography variant="body2" color="textSecondary" component="p">
          {m.title_accent_fold}
          </Typography>
@@ -57,10 +60,12 @@ const Album = () => {
           </Typography>
   
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        <ExpansionPanelDetails style={{backgroundColor:'#212120',color:'white'}}>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          
+           <ol>
+            <Song song={m.songs} key={index} />
+            </ol>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -69,6 +74,7 @@ const Album = () => {
    </Grid>
   
     ));
+  
 
   return (
     <Grid container spacing={4}>

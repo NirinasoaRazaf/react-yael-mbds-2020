@@ -53,7 +53,8 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import Card from '@material-ui/core/Card';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-
+import FacebookIcon from '@material-ui/icons/Facebook';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 
 
@@ -171,21 +172,7 @@ function App() {
   };
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
-
+ 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -199,9 +186,7 @@ function App() {
     >
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
+          <FacebookIcon />
         </IconButton>
         <p>Messages</p>
       </MenuItem>
@@ -213,36 +198,22 @@ function App() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      
     </Menu>
   );
   return (
     <div className="App">
          <BrowserRouter>
+         
          <AppBar  position="static">
+         
         <Toolbar className="AppBar">
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title}  variant="h6" noWrap>
-          {metallica.name}
-            
-          </Typography>
+        <Grid container spacing={2} >
+         
+            <Grid  item xs={1} ></Grid>
+            <Grid  item xs={1} ></Grid>
+            <Grid  item xs={1} ></Grid>
+            <Grid  item xs={5} >
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -256,28 +227,22 @@ function App() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
+          </Grid>
+          <Grid  item xs={2} >
+            </Grid>
+            <Grid  item xs={1} ></Grid>
+          <Grid  item xs={1} >
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
+            <IconButton color="inherit">
+              <Badge  color="secondary">
+              <a style={{color:'white'}}href={metallica.urlFacebook}> <FacebookIcon /></a>
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+            <IconButton color="inherit">
+                <a style={{color:'white'}}href={metallica.urlYouTube}><YouTubeIcon /></a>
             </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -290,11 +255,14 @@ function App() {
               <MoreIcon />
             </IconButton>
           </div>
+           
+          </Grid>    
+      </Grid>  
         </Toolbar>
+        
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
-
+           
 
         <Grid container spacing={2} >
         
@@ -307,12 +275,6 @@ function App() {
           </ListItemIcon>
           <Link to="/" className="link" ><ListItemText primary="Home" /> </Link>
          </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-          <Link to="/rock" className="link"><GroupWorkIcon className="link"/></Link>
-          </ListItemIcon>
-          <Link to="/rock" className="link"> <ListItemText primary="Groupe Rock" /></Link>
-        </ListItem>
         <ListItem button>
         <ListItemIcon>
           <Link to="/members" className="link"><PeopleAltIcon className="link" /></Link>
@@ -341,7 +303,7 @@ function App() {
         <Grid item xs={7}>
         <Card>
           <Typography style={{ color:'#0f010f',fontFamily: '"Arial Black", Gadget, sans-serif',fontSize:40}} >
-              <MusicNoteIcon style={{fontSize:50}}/>{metallica.name} 
+              <MusicNoteIcon style={{fontSize:50}}/>{metallica.name}  <MusicNoteIcon style={{fontSize:50}}/>
           </Typography>
 
         </Card>
