@@ -1,7 +1,40 @@
 .App {
   text-align: center;
+  
 }
-
+.colorIcon{
+  color:orangered;
+}
+.menuBar{
+  height:100%;
+}
+.list{
+  background-color:#0f010f;
+  height: 100%;
+  box-shadow: 2px 2px 2px grey;
+ 
+}
+.AppBar{
+  background-color: #580a5f;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+.title{
+  font-Weight: 'bold';
+   font-Family: "Arial Black", 'Gadget', 'sans-serif';
+   font-size:30px;
+   
+}
+.link {
+  color:#fdfcfb;
+  text-decoration:none;
+}
+.link:hover {
+   color:#bd5fcf;
+   text-decoration:none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,7 +58,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+color:white;
 }
 
 @keyframes App-logo-spin {
