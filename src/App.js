@@ -341,7 +341,7 @@ function App() {
         <Grid item xs={7}>
         <Card>
           <Typography style={{ color:'#0f010f',fontFamily: '"Arial Black", Gadget, sans-serif',fontSize:40}} >
-              <MusicVideoIcon/>{metallica.name}
+              <MusicVideoIcon/>{metallica.name} a
           </Typography>
 
         </Card>
