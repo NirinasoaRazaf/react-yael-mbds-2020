@@ -52,7 +52,7 @@ import TextFieldsIcon from '@material-ui/icons/TextFields';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import Card from '@material-ui/core/Card';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
-import MusicVideoIcon from '@material-ui/icons/MusicVideo';
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
 
 
@@ -341,11 +341,11 @@ function App() {
         <Grid item xs={7}>
         <Card>
           <Typography style={{ color:'#0f010f',fontFamily: '"Arial Black", Gadget, sans-serif',fontSize:40}} >
-              <MusicVideoIcon/>{metallica.name} a
+              <MusicNoteIcon style={{fontSize:50}}/>{metallica.name} 
           </Typography>
 
         </Card>
-        <hr/>
+        
         <Paper className={classes.paper}>
                   <Route exact path="/" component={GroupeRock}></Route>
                   <Route path="/rock" component={GroupeRock} />
