@@ -52,6 +52,7 @@ import TextFieldsIcon from '@material-ui/icons/TextFields';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import Card from '@material-ui/core/Card';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
+import MusicVideoIcon from '@material-ui/icons/MusicVideo';
 
 
 
@@ -340,7 +341,7 @@ function App() {
         <Grid item xs={7}>
         <Card>
           <Typography style={{ color:'#0f010f',fontFamily: '"Arial Black", Gadget, sans-serif',fontSize:40}} >
-          {metallica.name}
+              <MusicVideoIcon/>{metallica.name}
           </Typography>
 
         </Card>
